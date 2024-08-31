@@ -1,0 +1,76 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+  
+  /* Menu button (burger icon) hidden by default */
+  .menu-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Checkbox to toggle menu */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Navigation links */
+.navbar-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin: 0 10px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-links {
+      display: flex; /* Hide links by default on mobile */
+      position: fixed;
+      top: 50px;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background: #db1717;
+      flex-direction: column;
+      text-align: center;
+      border: 5px violet;
+    }
+
+    .menu-button {
+        display: block; /* Show burger menu button on mobile */
+    }
+        /* Show the menu when the checkbox is checked */
+    .menu-toggle:checked ~ .navbar-links {
+      left: 0%; /* Show links */
+    }
+    
+}
