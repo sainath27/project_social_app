@@ -11,12 +11,25 @@ function Login() {
     const navigate = useNavigate();
     
   
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
       e.preventDefault();
       // Handle login logic here (e.g., call API or update state)
-      console.log('First Name:', firstname);
-      console.log('Last Name:', lastname);
-      navigate('/home');
+      try {
+        const response = await fetch('/mock_login_data.json');
+        const data = await response.json();
+        const user = data.users.find(
+          (u) => u.username === firstname && u.password === password
+        );
+  
+        if (user) {
+          navigate('/home'); // Successful login, navigate to homepage
+        } else {
+          alert('Invalid credentials');
+        }
+      } catch (error) {
+        console.error('Error fetching mock data:', error);
+      }
+
     };
   
     return (

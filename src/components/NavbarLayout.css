@@ -1,0 +1,45 @@
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: relative;
+  }
+
+  .navbar-brand {
+    font-size: 20px;
+  }
+  
+  /* Menu button (burger icon) hidden by default */
+  .menu-button {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Checkbox to toggle menu */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Navigation links */
+.navbar-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin: 0 10px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+  }
